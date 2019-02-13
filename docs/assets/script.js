@@ -34,6 +34,16 @@ var tabsBtnsLength = tabsBtns.length;
 mainContainer.onclick = (e) => {
   var target = e.target;
   if (!target.classList.contains('mobile-tabs-btns__item-ttl')) return ;
+  if (target.parentNode.classList.contains('active')) {
+    console.log('active');
+    for (var i = 0; i < tabsBtnsLength; i++) {
+      if (target === tabsBtnsTtl[i]) {
+        tabsBtns[i].classList.remove('active');
+        wrappers[i].style.height = '0px';
+        return ;
+      }
+    };
+  };
   for (var i = 0; i < tabsBtnsLength; i++) {
     tabsBtns[i].classList.remove('active');
     wrappers[i].style.height = '0px';

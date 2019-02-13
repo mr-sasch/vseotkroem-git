@@ -112,6 +112,17 @@
 .tabs-content__tab-item-a.active {
   color: #15c394;
 }
+.mobile-tabs {
+  display: none;
+}
+@media screen and (max-width: 760px) {
+  .mobile-tabs {
+    display: block;
+  }
+  .tabs {
+    display: none;
+  }
+}
 .mobile-tabs-btns__item {
   color: #000;
   font-size: 20px;
