@@ -1,14 +1,9 @@
+include mixins
+
 .container
-  .row.d-flex.justify-content-center
+  .d-flex.justify-content-center
     //- Нав меню основное
-    ul.nav
-      mixin navItem(href, title, isActive)
-        li.nav__item(class= isActive)
-          a(href= href)= title
-      +navItem('/main', 'Главная', 'active')
-      +navItem('/services', 'Услуги')
-      +navItem('/prices', 'Цены')
-      +navItem('/contacts', 'Контакты')
+    +navMenu()
     //- /Нав меню основное
     //- Нав меню мобильное
     ul.nav-mobile
@@ -21,12 +16,12 @@
       +navMobileItem('/contacts', 'Контакты')
     //- /Нав меню мобильное
     //- Лого
-  .header__logo
+  section.header__logo
     img.header__logo-img(src='images/logo300.png')
     //- /Лого
   block headerUtp
-  .row.d-flex.justify-content-center
-    .tabs
+  .d-flex.justify-content-center
+    section.tabs
       ul.tabs-btns
         mixin bynItem(txt, isActive)
           li.tabs-btns__item(class= isActive)= txt
@@ -35,7 +30,7 @@
         +bynItem('Вскрытие сейфов')
         +bynItem('Замена и ремонт замков')
       //- Табы услуг
-      .tabs-content
+      section.tabs-content
         ul.tabs-content__tab.active
           li.tabs-content__tab-item
             a.tabs-content__tab-item-a(href='') Квартиры
@@ -65,7 +60,7 @@
           li.tabs-content__tab-item 
             a.tabs-content__tab-item-a(href='') Межкомнатных
     //- Мобильные табы
-    .mobile-tabs
+    section.mobile-tabs
       //- все табы
       ul.mobile-tabs-btns
         //- один айтем

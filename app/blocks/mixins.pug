@@ -1,0 +1,17 @@
+//- Навигационное меню
+mixin navMenu()
+  //- Нав меню основное
+  ul.nav
+    mixin navItem(href, title, isActive)
+      li.nav__item(class= isActive)
+        a(href= href)= title
+    +navItem('/main', 'Главная', 'active')
+    +navItem('/services', 'Услуги')
+    +navItem('/prices', 'Цены')
+    +navItem('/contacts', 'Контакты')
+  //- /Нав меню основное
+
+
+
+//- /Навигационное меню
+  

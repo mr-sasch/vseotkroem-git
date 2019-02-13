@@ -25,7 +25,26 @@ html(lang="en")
     //- Здесь контент страницы -//
     block content
     
+    //- Остались вопросы?
+    section.any-questions
+      .container
+        header.any-questions__header ОСТАЛИСЬ ВОПРОСЫ? НАПИШИТЕ НАМ И МЫ ВАМ ПЕРЕЗВОНИМ!
+        button.any-questions__button Заказать звонок            
+    //- /Остались вопросы?
+    //- Обратная связь
+    section.footer__form
+      .container
+        .row
+          .col-12.col-md-6
+          .col-12.col-md-6.d-flex.justify-content-center.justify-content-md-start
+            form.form
+              input.form__input(placeholder='ИМЯ')
+              input.form__input(placeholder='EMAIL')
+              textarea.form__textarea(placeholder='Введите текст')
+              input.form__submit(type='submit' value='Отправить')
+    //- /Обратная связь
     
+    block seoText
     
     // Footer 
     include ../blocks/footer
