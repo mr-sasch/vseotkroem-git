@@ -41,6 +41,8 @@
   text-align center
 .header__logo-img
   margin 30px 0
+  width 100%
+  max-width 300px
   // /Logo
 
   // Табы
@@ -122,14 +124,7 @@
   // Мобильные табы
 .mobile-tabs
   display none
-
-@media screen and (max-width 760px)
-  .mobile-tabs
-    display block
-  .tabs
-    display none
-
-
+  margin 0 10px
 
 .mobile-tabs-btns__item
   color #000
@@ -170,8 +165,20 @@
   height 0
   overflow hidden
   trs2()
-
   // /Мобильные табы
 
+  // Адаптация
+@media screen and (max-width 768px)
+  .nav__item a
+    margin-top 10px
+    margin-bottom 10px
+
+@media screen and (max-width 768px)
+  .mobile-tabs
+    display block
+  .tabs
+    display none
+
+  // /Адаптация
 
 // /Header
