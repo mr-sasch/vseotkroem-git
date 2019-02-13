@@ -7,7 +7,9 @@
     <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
     <title>Document</title>
     <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
     <!-- FontAwesome -->
     <!-- Стили -->
     <link rel="stylesheet" type="text/css" href="assets/style.css"/>
@@ -15,9 +17,107 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;amp;subset=cyrillic" rel="stylesheet"/>
   </head>
   <body>
-    <!-- Header -->
+    <!-- Header-->
+    <header class="header header-main">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <ul class="nav">
+                        <li class="nav__item active"><a href="/main">Главная</a></li>
+                        <li class="nav__item"><a href="/services">Услуги</a></li>
+                        <li class="nav__item"><a href="/prices">Цены</a></li>
+                        <li class="nav__item"><a href="/contacts">Контакты</a></li>
+          </ul>
+          <ul class="nav-mobile">
+                        <li class="nav-mobile__item active"><a href="/main">Главная</a></li>
+                        <li class="nav-mobile__item"><a href="/services">Услуги</a></li>
+                        <li class="nav-mobile__item"><a href="/prices">Цены</a></li>
+                        <li class="nav-mobile__item"><a href="/contacts">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="header__logo"><img class="header__logo-img" src="images/logo300.png"/></div>
+        <div class="header-main-utp">
+          <h1 class="header-main-utp__h1">ЗВОНИТЕ! МЫ ПОМОЖЕМ ОТКРЫТЬ ЛЮБЫЕ ДВЕРИ! </h1>
+          <h2 class="header-main-utp__h2">БЫСТРО И АККУРАТНО!</h2>
+          <p class="header-main-utp__p">8 (029) 123 45 67</p>
+          <button class="utp-button">Вызвать мастера</button>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <div class="tabs">
+            <ul class="tabs-btns">
+                            <li class="tabs-btns__item active">Вскрытие дверей</li>
+                            <li class="tabs-btns__item">Вскрытие автомобилей</li>
+                            <li class="tabs-btns__item">Вскрытие сейфов</li>
+                            <li class="tabs-btns__item">Замена и ремонт замков</li>
+            </ul>
+            <div class="tabs-content">
+              <ul class="tabs-content__tab active">
+                <li class="tabs-content__tab-item"><a class="tabs-content__tab-item-a" href="">Квартиры</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Офисы и склады</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Коттеджи и гаражи</a></li>
+              </ul>
+              <ul class="tabs-content__tab">
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Замки</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Двери и багажники</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Вскрытие капотов</a></li>
+              </ul>
+              <ul class="tabs-content__tab">
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">С деньгами</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">С ценными бумагами</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">С забытыми внутри ключами</a></li>
+              </ul>
+              <ul class="tabs-content__tab">
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Квартирных</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Уличных</a></li>
+                <li class="tabs-content__tab-item"> <a class="tabs-content__tab-item-a" href="">Межкомнатных</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mobile-tabs">
+            <ul class="mobile-tabs-btns">
+              <li class="mobile-tabs-btns__item active"> <span class="mobile-tabs-btns__item-ttl">Вскрытие дверей</span>
+                <div class="mobile-tabs-content__tab-wrapper">
+                  <ul class="mobile-tabs-content__tab">
+                    <li class="mobile-tabs-content__tab-item"><a class="mobile-tabs-content__tab-item-a" href="">Квартиры</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Офисы и склады</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Коттеджи и гаражи</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mobile-tabs-btns__item"><span class="mobile-tabs-btns__item-ttl">Вскрытие автомобилей</span>
+                <div class="mobile-tabs-content__tab-wrapper">
+                  <ul class="mobile-tabs-content__tab">
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Замки</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Двери и багажники</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Вскрытие капотов</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mobile-tabs-btns__item"><span class="mobile-tabs-btns__item-ttl">Вскрытие сейфов</span>
+                <div class="mobile-tabs-content__tab-wrapper">
+                  <ul class="mobile-tabs-content__tab">
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">С деньгами</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">С ценными бумагами</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">С забытыми внутри ключами</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="mobile-tabs-btns__item"><span class="mobile-tabs-btns__item-ttl">Замена и ремонт замков</span>
+                <div class="mobile-tabs-content__tab-wrapper">
+                  <ul class="mobile-tabs-content__tab">
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Квартирных</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Уличных</a></li>
+                    <li class="mobile-tabs-content__tab-item"> <a class="mobile-tabs-content__tab-item-a" href="">Межкомнатных</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
     <!-- Content-->
-    <h1>ТЕСТ</h1>
+    <div class="content-stranitsi">Здесь контент страницы</div>
     <!-- Footer -->
+    <script src="assets/script.js" defer="defer"></script>
   </body>
 </html>
