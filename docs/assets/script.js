@@ -57,3 +57,17 @@ mainContainer.onclick = (e) => {
 }
 })();
 // /Табы в шапке - мобильные
+
+// Высота ключа в тексте на Главной
+// var imgKey = () => {
+//   console.log('run');
+//   var textContainer = document.querySelector('.seo-text__text');
+//   var textContainerHeight = textContainer.offsetHeight;
+//   var img = document.querySelector('.seo-text__img');
+//   var imgHeight = img.offsetHeight;
+//   if (imgHeight > textContainerHeight) {
+//     img.style.height = textContainer.offsetHeight + 'px';
+//   };
+// };
+// setTimeout(imgKey(), 5000);
+// /Высота ключа в тексте на Главной
