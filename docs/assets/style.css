@@ -359,6 +359,29 @@ body {
   shape-outside: url("../images/main-article-key.png");
   width: 200px;
 }
+.why-us {
+  padding: 50px 0;
+  background-image: url("../images/bg-dotted.jpg");
+}
+.why-us-item__row {
+  margin: 30px 0;
+}
+.why-us__item-number {
+  width: 60px;
+  height: 60px;
+  border: 2px solid;
+  border-radius: 50%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+.why-us__item-article-p {
+  font-size: 18px;
+}
 .main-prices {
   margin: 30px 0 30px;
 }
@@ -405,6 +428,11 @@ body {
 .main-prices-item__button:hover {
   background-color: #15c394;
   color: #fff;
+}
+@media screen and (max-width: 375px) {
+  .why-us__item-article-header-h1 {
+    font-size: 2em;
+  }
 }
 .title-stroke-center {
   text-align: center;
