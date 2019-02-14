@@ -11,13 +11,17 @@ mixin navMenu()
     +navItem('/contacts', 'Контакты')
   //- /Нав меню основное
 
-
   //- Заголовок зачеркнутый. Центр
 mixin titleStrokeCenter(ttl)
   .title-stroke-center
-    h1.title-stroke-center__h1= ttl
-  
+    h1.title-stroke-center__h1= ttl  
   //- /Заголовок зачеркнутый. Центр
+
+  //- Заголовок зачеркнутый. Справа
+mixin titleStrokeRight(ttl)
+  .title-stroke-right
+    h1.title-stroke-right__h1= ttl  
+  //- /Заголовок зачеркнутый. Справа
 
 //- /Навигационное меню
   

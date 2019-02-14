@@ -5,17 +5,19 @@
   var tabsBtnsItemLength = tabsBtnsItem.length;
   var tabsContentTab = document.querySelectorAll('.tabs-content__tab');
 
-  tabsBtns.onclick = (e) => {
-    var target = e.target;
-    if (!target.classList.contains('tabs-btns__item')) return ;
-    for (var i = 0; i < tabsBtnsItemLength; i++) {
-      tabsBtnsItem[i].classList.remove('active');
-      tabsContentTab[i].classList.remove('active');
-    }
-    for (var i = 0; i < tabsBtnsItemLength; i++) {
-      if (tabsBtnsItem[i] == target) {
-        tabsBtnsItem[i].classList.add('active');
-        tabsContentTab[i].classList.add('active');
+  if (tabsBtns) {
+    tabsBtns.onclick = (e) => {
+      var target = e.target;
+      if (!target.classList.contains('tabs-btns__item')) return ;
+      for (var i = 0; i < tabsBtnsItemLength; i++) {
+        tabsBtnsItem[i].classList.remove('active');
+        tabsContentTab[i].classList.remove('active');
+      }
+      for (var i = 0; i < tabsBtnsItemLength; i++) {
+        if (tabsBtnsItem[i] == target) {
+          tabsBtnsItem[i].classList.add('active');
+          tabsContentTab[i].classList.add('active');
+        }
       }
     }
   }
@@ -31,29 +33,31 @@ var wrappers = document.querySelectorAll('.mobile-tabs-content__tab-wrapper');
 var listItems = document.querySelectorAll('.mobile-tabs-content__tab');
 var tabsBtnsLength = tabsBtns.length;
 
-mainContainer.onclick = (e) => {
-  var target = e.target;
-  if (!target.classList.contains('mobile-tabs-btns__item-ttl')) return ;
-  if (target.parentNode.classList.contains('active')) {
-    console.log('active');
+if (mainContainer) {
+  mainContainer.onclick = (e) => {
+    var target = e.target;
+    if (!target.classList.contains('mobile-tabs-btns__item-ttl')) return ;
+    if (target.parentNode.classList.contains('active')) {
+      console.log('active');
+      for (var i = 0; i < tabsBtnsLength; i++) {
+        if (target === tabsBtnsTtl[i]) {
+          tabsBtns[i].classList.remove('active');
+          wrappers[i].style.height = '0px';
+          return ;
+        }
+      };
+    };
+    for (var i = 0; i < tabsBtnsLength; i++) {
+      tabsBtns[i].classList.remove('active');
+      wrappers[i].style.height = '0px';
+    };
     for (var i = 0; i < tabsBtnsLength; i++) {
       if (target === tabsBtnsTtl[i]) {
-        tabsBtns[i].classList.remove('active');
-        wrappers[i].style.height = '0px';
-        return ;
+        tabsBtns[i].classList.add('active');
+        wrappers[i].style.height = listItems[i].offsetHeight + 'px';
       }
     };
-  };
-  for (var i = 0; i < tabsBtnsLength; i++) {
-    tabsBtns[i].classList.remove('active');
-    wrappers[i].style.height = '0px';
-  };
-  for (var i = 0; i < tabsBtnsLength; i++) {
-    if (target === tabsBtnsTtl[i]) {
-      tabsBtns[i].classList.add('active');
-      wrappers[i].style.height = listItems[i].offsetHeight + 'px';
-    }
-  };
+  }
 }
 })();
 // /Табы в шапке - мобильные
