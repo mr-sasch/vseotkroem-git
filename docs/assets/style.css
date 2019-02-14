@@ -344,6 +344,36 @@ body {
   height: 2px;
   background-color: #d3d3d3;
 }
+.adress-frame {
+  border: none;
+  min-height: 260px;
+}
+.adress {
+  background-color: #fff;
+  padding: 20px;
+}
+.adress__article {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: row;
+}
+.adress__article-header {
+  font-size: 18px;
+  color: #808080;
+}
+.adress__article-p {
+  font-size: 18px;
+  color: #000;
+  padding-left: 7px;
+  margin-bottom: 7px;
+}
+.adress__text {
+  font-size: 14px;
+  color: #808080;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
 .header-main-utp {
   text-align: center;
 }
