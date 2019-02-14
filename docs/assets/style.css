@@ -21,7 +21,7 @@ button {
 body {
   font-family: 'Roboto', sans-serif;
 }
-footer {
+.site-footer {
   background-color: #000;
 }
 .footer__nav {
@@ -358,6 +358,53 @@ footer {
   float: right;
   shape-outside: url("../images/main-article-key.png");
   width: 200px;
+}
+.main-prices {
+  margin: 30px 0 30px;
+}
+.main-prices-item_row {
+  padding-top: 20px;
+}
+.main-prices-item {
+  text-align: center;
+  padding-bottom: 30px;
+  padding: 15px 10px 30px 10px;
+  border: 2px solid;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 40px;
+}
+.main-prices-item__header {
+  font-size: 14px;
+  color: #808080;
+  text-transform: uppercase;
+}
+.main-prices-item__img {
+  max-width: 70%;
+}
+.main-prices-item__footer {
+  font-size: 24px;
+  font-weight: bold;
+}
+.main-prices-item__button-wrapper {
+  background-color: #fff;
+  padding: 0 12px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+.main-prices-item__button {
+  padding: 2px 15px;
+  font-size: 18px;
+  border: 2px solid #15c394;
+  border-radius: 7px;
+  background-color: #fff;
+  transition: 0.2s ease;
+}
+.main-prices-item__button:hover {
+  background-color: #15c394;
+  color: #fff;
 }
 .title-stroke-center {
   text-align: center;
