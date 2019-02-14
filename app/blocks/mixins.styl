@@ -1,0 +1,31 @@
+// Заголовок зачеркнутый. Центр
+.title-stroke-center
+  text-align center
+  overflow hidden
+.title-stroke-center__h1
+  display inline-block
+  min-width 280px
+  padding 0 30px
+  position relative
+.title-stroke-center__h1:before
+  content ''
+  position absolute
+  right 100%
+  top 50%
+  transform translateY(-50%)
+  width 2000px
+  height 2px
+  background-color lightgrey
+.title-stroke-center__h1:after
+  content ''
+  position absolute
+  left 100%
+  top 50%
+  transform translateY(-50%)
+  width 2000px
+  height 2px
+  background-color lightgrey
+
+
+
+// /Заголовок зачеркнутый. Центр
