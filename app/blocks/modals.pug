@@ -1,0 +1,17 @@
+// Модальные окна
+.modal.fade#callMaster(tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h5.modal-title Вызов мастера
+        button.close(data-dismiss='modal' aria-label='close')
+          span(aria-hidden='true') &times;
+      .modal-body
+        form.call-master-form
+          input.call-master-form__input(name='call-master-name' type='text' placeholder='Ваше имя')
+          input.call-master-form__input(name='call-master-phone' type='text' placeholder='Телефон')
+          input.call-master-form__input(name='call-master-address' type='text' placeholder='Адрес')
+          textarea.call-master-form__textarea(name='call-master-ext' placeholder='Напишите, что случилось')
+          input(type='submit' value='Вызвать мастера') 
+
+// /Модальные окна
