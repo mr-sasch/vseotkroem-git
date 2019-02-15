@@ -25,7 +25,7 @@ block content
                 .col-6.col-sm-4
                   .prices__values-value= val
                 .col-12.col-sm-4.text-center.text-sm-right.mt-2.mt-sm-0
-                  button.prices__values-btn Вызвать мастера
+                  button.prices__values-btn(data-toggle='modal' data-target='#callMaster') Вызвать мастера
             +priceItem('Вскрытие дверей', '20 руб.')
             +priceItem('Офисы и склады', '20 руб.')
             +priceItem('Коттеджи и гаражи', '20 руб.')
