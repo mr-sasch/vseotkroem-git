@@ -24,6 +24,11 @@ body {
 .simple-page-content {
   background-image: url("../images/bg-dotted.jpg");
 }
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #15c394;
+}
 .site-footer {
   background-color: #202020;
 }
