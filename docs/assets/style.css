@@ -553,7 +553,7 @@ body {
   background-color: rgba(0,0,0,0.7);
   border-radius: 10px;
   padding: 5px 10px;
-  border: 2px solid rgba(0,0,0,0.7);
+  border: 2px solid transparent;
   transition: 0.2s ease;
 }
 .prices__values-btn:hover {
