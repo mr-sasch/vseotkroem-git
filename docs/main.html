@@ -241,7 +241,7 @@
     <section class="any-questions">
       <div class="container">
         <header class="any-questions__header">ОСТАЛИСЬ ВОПРОСЫ? НАПИШИТЕ НАМ И МЫ ВАМ ПЕРЕЗВОНИМ!</header>
-        <button class="any-questions__button">Заказать звонок            </button>
+        <button class="any-questions__button" data-toggle="modal" data-target="#callBack">Заказать звонок            </button>
       </div>
     </section>
     <section class="seo-text">
@@ -292,10 +292,11 @@
       <div class="container">
         <div class="footer__bottom">
           <p class="header-main-utp__p">8 (029) 123 45 67</p>
-          <button class="utp-button">Вызвать мастера</button>
+          <button class="utp-button" data-toggle="modal" data-target="#callMaster">Вызвать мастера</button>
         </div>
       </div>
       <!-- Модальные окна-->
+      <!-- Вызвать мастера-->
       <div class="modal fade" id="callMaster" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -317,6 +318,28 @@
           </div>
         </div>
       </div>
+      <!-- /Вызвать мастера-->
+      <!-- Заказать звонок-->
+      <div class="modal fade" id="callBack" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Заказать звонок</h5>
+              <button class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <form class="call-master-form">
+                <input class="call-master-form__input" name="call-master-name" type="text" placeholder="Ваше имя"/>
+                <input class="call-master-form__input" name="call-master-phone" type="text" placeholder="Телефон"/>
+                <div class="call-back-form__submit">
+                  <input class="any-questions__button" type="submit" value="Заказать звонок"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Заказать звонок-->
       <!-- /Модальные окна-->
     </footer>
     <script src="assets/script.js" defer="defer"></script>

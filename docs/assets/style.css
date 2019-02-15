@@ -504,6 +504,14 @@ body {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+.call-back-form__submit {
+  text-align: center;
+}
+.call-back-form__submit .any-questions__button {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
 .modal-content {
   background-color: #f3f3f3;
   border: 2px solid #15c394;
