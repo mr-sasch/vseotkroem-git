@@ -5,10 +5,10 @@ mixin navMenu()
     mixin navItem(href, title, isActive)
       li.nav__item(class= isActive)
         a(href= href)= title
-    +navItem('/main', 'Главная', 'active')
-    +navItem('/services', 'Услуги')
-    +navItem('/prices', 'Цены')
-    +navItem('/contacts', 'Контакты')
+    +navItem('main.html', 'Главная', 'active')
+    +navItem('services.html', 'Услуги')
+    +navItem('prices.html', 'Цены')
+    +navItem('contacts.html', 'Контакты')
   //- /Нав меню основное
 
   //- Заголовок зачеркнутый. Центр

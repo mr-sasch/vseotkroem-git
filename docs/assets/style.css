@@ -66,8 +66,14 @@ body {
   font-size: 18px;
   font-weight: bold;
   background-color: #15c394;
+  border: 2px solid #15c394;
   border-radius: 10px;
   padding: 10px 30px;
+  transition: 0.2s ease;
+}
+.any-questions__button:hover {
+  background-color: #fff;
+  color: #15c394;
 }
 .footer__form {
   background-image: url("../images/footer-bg.jpg");
@@ -104,16 +110,22 @@ body {
   height: 130px;
 }
 .form__submit {
-  border: none;
+  border: 2px solid #0e8c85;
   border-radius: 5px;
   color: #fff;
   background-color: #0e8c85;
   font-size: 18px;
-  padding: 10px 5px;
+  padding: 8px 3px;
   width: 100%;
   max-width: 150px;
   margin-top: 3px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+.form__submit:hover {
+  color: #0e8c85;
+  background-color: #fff;
+  border: 2px solid #0e8c85;
 }
 .header {
   color: #fff;
@@ -397,10 +409,16 @@ body {
   font-size: 20px;
   font-weight: bold;
   background-color: #c2ff2f;
+  border: 2px solid #c2ff2f;
   border-radius: 10px;
-  border: none;
-  padding: 10px 30px;
+  padding: 8px 28px;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+.utp-button:hover {
+  background-color: #fff;
+  color: #15c394;
+  border: 2px solid #15c394;
 }
 .header-main {
   background-image: url("../images/main-header.jpg");
@@ -532,9 +550,16 @@ body {
   font-size: 18px;
   color: #fff;
   font-weight: bold;
-  background-color: #000;
+  background-color: rgba(0,0,0,0.7);
   border-radius: 10px;
-  padding: 7px 12px;
+  padding: 5px 10px;
+  border: 2px solid rgba(0,0,0,0.7);
+  transition: 0.2s ease;
+}
+.prices__values-btn:hover {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
 }
 .simple-page-content {
   padding: 40px 0;
@@ -556,8 +581,14 @@ body {
   background-color: #000;
   color: #fff;
   padding: 10px 30px;
+  border: 2px solid #000;
   margin: auto;
   display: inline-block;
+  transition: 0.2s ease;
+}
+.services__button:hover {
+  color: #000;
+  background-color: #fff;
 }
 .title-stroke-center {
   text-align: center;
