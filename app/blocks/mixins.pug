@@ -1,7 +1,7 @@
 //- Навигационное меню
 mixin navMenu()
   //- Нав меню основное
-  ul.nav
+  ul.nav.d-flex.flex-column.flex-sm-row
     mixin navItem(href, title, isActive)
       li.nav__item(class= isActive)
         a(href= href)= title

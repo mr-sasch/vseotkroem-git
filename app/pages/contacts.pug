@@ -14,7 +14,7 @@ block content
           +titleStrokeRight('Контакты')
           section.adress
             mixin adress(ttl, txt)
-              article.adress__article
+              article.adress__article.d-flex.flex-row.flex-wrap
                 header.adress__article-header= ttl
                 p.adress__article-p= txt
             +adress('Email:', 'zamokvscroem@mail.ru')
