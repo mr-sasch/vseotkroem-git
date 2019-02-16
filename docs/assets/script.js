@@ -38,7 +38,6 @@ if (mainContainer) {
     var target = e.target;
     if (!target.classList.contains('mobile-tabs-btns__item-ttl')) return ;
     if (target.parentNode.classList.contains('active')) {
-      console.log('active');
       for (var i = 0; i < tabsBtnsLength; i++) {
         if (target === tabsBtnsTtl[i]) {
           tabsBtns[i].classList.remove('active');
@@ -112,7 +111,7 @@ var drawLine = () => {
     var point2width = point2coords.width;
 
     if (point2left < point1left) {
-      
+
       var point1 = pointAll[i];
       var point1coords = point1.getBoundingClientRect();
       var point1height = point1coords.height;
@@ -169,6 +168,7 @@ var drawLine = () => {
   }
 
 };
+setTimeout(drawLine, 500);
+window.onresize = () => drawLine();
 
-drawLine();
 // /Линии между кругами
