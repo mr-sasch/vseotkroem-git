@@ -8,6 +8,7 @@
     <title>Document</title>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
     <!-- FontAwesome -->
@@ -51,7 +52,7 @@
           <h2 class="header-main-utp__h2">БЫСТРО И АККУРАТНО!</h2>
           <p class="header-main-utp__p">8 (029) 123 45 67</p>
           <div class="header-main-utp__button">
-            <button class="utp-button">Вызвать мастера</button>
+            <button class="utp-button" data-toggle="modal" data-target="#callMaster">Вызвать мастера</button>
           </div>
         </section>
         <div class="d-flex justify-content-center">
@@ -135,6 +136,8 @@
                 <h1 class="title-stroke-center__h1">Почему мы?</h1>
               </div>
         <div class="section why-us__item">
+          <!-- Линии-->
+          <!-- /Линии-->
           <div class="why-us-item__row">
             <div class="row d-flex align-items-center">
               <div class="d-none d-sm-flex justify-content-end pr-2 pr-md-4 pr-lg-5 col-sm-2">
@@ -240,7 +243,7 @@
     <section class="any-questions">
       <div class="container">
         <header class="any-questions__header">ОСТАЛИСЬ ВОПРОСЫ? НАПИШИТЕ НАМ И МЫ ВАМ ПЕРЕЗВОНИМ!</header>
-        <button class="any-questions__button">Заказать звонок            </button>
+        <button class="any-questions__button" data-toggle="modal" data-target="#callBack">Заказать звонок            </button>
       </div>
     </section>
     <section class="seo-text">
@@ -307,9 +310,55 @@
       <div class="container">
         <div class="footer__bottom">
           <p class="header-main-utp__p">8 (029) 123 45 67</p>
-          <button class="utp-button">Вызвать мастера</button>
+          <button class="utp-button" data-toggle="modal" data-target="#callMaster">Вызвать мастера</button>
         </div>
       </div>
+      <!-- Модальные окна-->
+      <!-- Вызвать мастера-->
+      <div class="modal fade" id="callMaster" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Вызов мастера</h5>
+              <button class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <form class="call-master-form">
+                <input class="call-master-form__input" name="call-master-name" type="text" placeholder="Ваше имя"/>
+                <input class="call-master-form__input" name="call-master-phone" type="text" placeholder="Телефон"/>
+                <input class="call-master-form__input" name="call-master-address" type="text" placeholder="Адрес"/>
+                <textarea class="call-master-form__textarea" name="call-master-ext" placeholder="Опишите, что случилось"></textarea>
+                <div class="call-master-form__submit">
+                  <input class="utp-button" type="submit" value="Вызвать мастера"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Вызвать мастера-->
+      <!-- Заказать звонок-->
+      <div class="modal fade" id="callBack" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Заказать звонок</h5>
+              <button class="close" data-dismiss="modal" aria-label="close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <form class="call-master-form">
+                <input class="call-master-form__input" name="call-master-name" type="text" placeholder="Ваше имя"/>
+                <input class="call-master-form__input" name="call-master-phone" type="text" placeholder="Телефон"/>
+                <div class="call-back-form__submit">
+                  <input class="any-questions__button" type="submit" value="Заказать звонок"/>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Заказать звонок-->
+      <!-- /Модальные окна-->
     </footer>
     <script src="assets/script.js" defer="defer"></script>
   </body>
