@@ -74,40 +74,6 @@ if (mainContainer) {
 // /Кнопка мобильного меню
 
 // Линии между кругами
-// var drawLine = (a, b) => {
-//   var parent = document.querySelector('.why-us__item');
-//   var parentCoords = parent.getBoundingClientRect();
-//   var parentTop = parentCoords.top;
-//   var parentLeft = parentCoords.left;
-//
-//   var pointAll = document.querySelectorAll('.why-us__item-number');
-//   var point1 = pointAll[a];
-//   var point1coords = point1.getBoundingClientRect();
-//   var point1top = point1coords.top;
-//   var point1left = point1coords.left;
-//
-//   var point2 = pointAll[b];
-//   var point2coords = point2.getBoundingClientRect();
-//   var point2top = point2coords.top;
-//   var point2left = point2coords.left;
-//   var point2height = point2coords.height;
-//   var point2width = point2coords.width;
-//
-//   var svg = document.querySelectorAll('.line');
-//   svg[0].style.top = point1top + (point2height/2) - parentTop + 'px';
-//   svg[0].style.left = point1left + (point2width/2) - parentLeft + 'px';
-//
-//   var svgWidth = point2left - point1left;
-//   var svgHeight = point2top - point1top;
-//   svg[0].style.width = svgWidth + 'px';
-//   svg[0].style.height = svgHeight + 'px';
-//
-//   var line = document.querySelector('.line__stroke');
-//   line.setAttribute('x2', svgWidth);
-//   line.setAttribute('y2', svgHeight);
-// };
-// drawLine(0, 1);
-
 var drawLine = () => {
   var blocksContainer = document.querySelector('.why-us__item');
   var blocks = document.querySelectorAll('.why-us__item-article');
@@ -115,27 +81,92 @@ var drawLine = () => {
   var linesQuantity = blocksQuantity - 1;
 
   var createSvgBlock = () => { // Функция создания контейнера с полосами
-    var svg = document.createElement('svg');
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
     svg.classList.add('line');
-    var line = document.createElement('line');
+    var line = document.createElementNS('http://www.w3.org/2000/svg', 'line')
     line.classList.add('line__stroke');
     line.setAttribute('x1', '0');
     line.setAttribute('y1', '0');
     line.setAttribute('style', 'stroke:rgb(0,0,0); stroke-width:2');
     svg.appendChild(line);
     blocksContainer.appendChild(svg);
-    console.log(svg);
   }
+
+  var drawing = (i) => {
+    var parent = document.querySelector('.why-us__item');
+    var parentCoords = parent.getBoundingClientRect();
+    var parentTop = parentCoords.top;
+    var parentLeft = parentCoords.left;
+
+    var pointAll = document.querySelectorAll('.why-us__item-number');
+    var point1 = pointAll[i];
+    var point1coords = point1.getBoundingClientRect();
+    var point1top = point1coords.top;
+    var point1left = point1coords.left;
+
+    var point2 = pointAll[i + 1];
+    var point2coords = point2.getBoundingClientRect();
+    var point2top = point2coords.top;
+    var point2left = point2coords.left;
+    var point2height = point2coords.height;
+    var point2width = point2coords.width;
+
+    if (point2left < point1left) {
+      
+      var point1 = pointAll[i];
+      var point1coords = point1.getBoundingClientRect();
+      var point1height = point1coords.height;
+      var point1width = point1coords.width;
+      var point1top = point1coords.top;
+      var point1left = point1coords.left;
+
+      var point2 = pointAll[i + 1];
+      var point2coords = point2.getBoundingClientRect();
+      var point2height = point2coords.height;
+      var point2width = point2coords.width;
+      var point2top = point2coords.top;
+      var point2left = point2coords.left;
+
+      var svg = document.querySelectorAll('.line');
+      svg[i].style.top = point1top + (point2height/2) - parentTop + 'px';
+      svg[i].style.left = point2left + (point2width/2) - parentLeft + 'px';
+
+      var svgWidth = point1left - point2left;
+      var svgHeight = point2top - point1top;
+      svg[i].style.width = svgWidth + 'px';
+      svg[i].style.height = svgHeight + 'px';
+
+      var lineAll = document.querySelectorAll('.line__stroke');
+      var line = lineAll[i];
+      line.setAttribute('x1', svgWidth);
+      line.setAttribute('y1', '0');
+      line.setAttribute('x2', '0');
+      line.setAttribute('y2', svgHeight);
+
+    } else {
+
+      var svg = document.querySelectorAll('.line');
+      svg[i].style.top = point1top + (point2height/2) - parentTop + 'px';
+      svg[i].style.left = point1left + (point2width/2) - parentLeft + 'px';
+
+      var svgWidth = point2left - point1left;
+      var svgHeight = point2top - point1top;
+      svg[i].style.width = svgWidth + 'px';
+      svg[i].style.height = svgHeight + 'px';
+
+      var lineAll = document.querySelectorAll('.line__stroke');
+      var line = lineAll[i];
+      line.setAttribute('x2', svgWidth);
+      line.setAttribute('y2', svgHeight);
+
+    };
+
+  };
 
   for (var i = 0; i < linesQuantity; i++) { // Создаем контейнеры с полосами
     createSvgBlock();
-    var svg = document.querySelectorAll('.line');
-    var number = i + 1;
-    svg[i].classList.add('line-' + number);
+    drawing(i);
   }
-
-
-
 
 };
 
