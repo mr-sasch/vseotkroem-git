@@ -74,27 +74,37 @@ if (mainContainer) {
 // /Кнопка мобильного меню
 
 // Линии между кругами
-var parent = document.querySelector('.why-us__item');
-var parentCoords = parent.getBoundingClientRect();
-var parentTop = parentCoords.top;
-var parentLeft = parentCoords.left;
+var drawLine = (a, b) => {
+  var parent = document.querySelector('.why-us__item');
+  var parentCoords = parent.getBoundingClientRect();
+  var parentTop = parentCoords.top;
+  var parentLeft = parentCoords.left;
 
-var pointAll = document.querySelectorAll('.why-us__item-number');
-var point1 = pointAll[0];
-var point1coords = point1.getBoundingClientRect();
-var point1top = point1coords.top;
-var point1left = point1coords.left;
+  var pointAll = document.querySelectorAll('.why-us__item-number');
+  var point1 = pointAll[a];
+  var point1coords = point1.getBoundingClientRect();
+  var point1top = point1coords.top;
+  var point1left = point1coords.left;
 
-var point2 = pointAll[1];
-var point2coords = point2.getBoundingClientRect();
-var point2top = point2coords.top;
-var point2left = point2coords.left;
-var point2height = point2coords.height;
-var point2width = point2coords.width;
+  var point2 = pointAll[b];
+  var point2coords = point2.getBoundingClientRect();
+  var point2top = point2coords.top;
+  var point2left = point2coords.left;
+  var point2height = point2coords.height;
+  var point2width = point2coords.width;
 
-var line = document.querySelectorAll('.line');
-line[0].style.top = point1top - parentTop + 'px';
-line[0].style.left = point1left - parentLeft + 'px';
-line[0].style.height = point2top - point1top + point2height + 'px';
-line[0].style.width = point2left - point1left + point2width + 'px';
+  var svg = document.querySelectorAll('.line');
+  svg[0].style.top = point1top + (point2height/2) - parentTop + 'px';
+  svg[0].style.left = point1left + (point2width/2) - parentLeft + 'px';
+
+  var svgWidth = point2left - point1left;
+  var svgHeight = point2top - point1top;
+  svg[0].style.width = svgWidth + 'px';
+  svg[0].style.height = svgHeight + 'px';
+
+  var line = document.querySelector('.line__stroke');
+  line.setAttribute('x2', svgWidth);
+  line.setAttribute('y2', svgHeight);
+};
+drawLine(0, 1);
 // /Линии между кругами
