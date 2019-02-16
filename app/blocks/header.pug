@@ -1,20 +1,32 @@
 include mixins
 
 .container
+  //- Нав меню мобильное
+  .nav-mobile-wrapper
+    nav.nav-mobile
+      ul
+        mixin navMobileItem(href, title, isActive)
+          li.nav-mobile__item(class= isActive)
+            a.nav-mobile__item-a(href= href)= title
+        +navMobileItem('main.html', 'Главная', 'active')
+        +navMobileItem('services.html', 'Услуги')
+        +navMobileItem('prices.html', 'Цены')
+        +navMobileItem('contacts.html', 'Контакты')
+  //- Кнопка мобильного меню
+  .nav-mobile__label
+    .nav-mobile__label-stroke.nav-mobile__label-stroke-1
+    .nav-mobile__label-stroke.nav-mobile__label-stroke-2
+    .nav-mobile__label-stroke.nav-mobile__label-stroke-3
+  //- /Кнопка мобильного меню  
+
+  //- /Нав меню мобильное
+
   .d-flex.justify-content-center
     //- Нав меню основное
-    +navMenu()
+    .nav-desktop
+      +navMenu()
     //- /Нав меню основное
-    //- Нав меню мобильное
-    ul.nav-mobile
-      mixin navMobileItem(href, title, isActive)
-        li.nav-mobile__item(class= isActive)
-          a(href= href)= title
-      +navMobileItem('/main', 'Главная', 'active')
-      +navMobileItem('/services', 'Услуги')
-      +navMobileItem('/prices', 'Цены')
-      +navMobileItem('/contacts', 'Контакты')
-    //- /Нав меню мобильное
+
     //- Лого
   section.header__logo
     img.header__logo-img(src='images/logo300.png')
