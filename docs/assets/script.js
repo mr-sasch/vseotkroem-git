@@ -170,5 +170,34 @@ var drawLine = () => {
 };
 setTimeout(drawLine, 500);
 window.onresize = () => drawLine();
-
 // /Линии между кругами
+
+// Scroll to top
+(() => {
+  var doc = document.documentElement;
+  var scroll = document.querySelector('.scroll-top');
+
+  var docHeight = document.documentElement.clientHeight;
+  document.onscroll = function() {
+    if(doc.scrollTop > 200) {
+      scroll.style.opacity = '1';
+      scroll.style.zIndex = '10';
+    } else {
+      scroll.style.opacity = '0';
+      scroll.style.zIndex = '-1';
+    }
+  };
+
+  var TopscrollTo = function () {
+    if(window.scrollY!=0) {
+      setTimeout(function() {
+        window.scrollTo(0,window.scrollY-30);
+        TopscrollTo();
+      }, 5);
+    }
+  };
+  scroll.onclick = TopscrollTo;
+
+})();
+
+// /Scroll to top
