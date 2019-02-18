@@ -4,8 +4,8 @@ mixin navMenu()
   ul.nav.d-flex.flex-column.flex-sm-row
     mixin navItem(href, title, isActive)
       li.nav__item(class= isActive)
-        a(href= href)= title
-    +navItem('main.html', 'Главная', 'active')
+        a.nav__item-a(href= href)= title
+    +navItem('main.html', 'Главная')
     +navItem('services.html', 'Услуги')
     +navItem('prices.html', 'Цены')
     +navItem('contacts.html', 'Контакты')

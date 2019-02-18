@@ -171,6 +171,9 @@ body {
   width: 100%;
   max-width: 300px;
 }
+.nav-mobile__item.active .nav-mobile__item-a {
+  color: #15c394;
+}
 .nav-mobile__item-a {
   display: block;
   font-size: 20px;

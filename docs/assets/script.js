@@ -203,38 +203,58 @@ window.onresize = () => drawLine();
 
 // активный пункт меню
 (() => {
-  var activeNavMenu = () =>
+  // В шапке
+  var activeHeaderMenu = () =>
   {
     var currentUrl = window.location.pathname.split('/'),
-      menuA = document.querySelectorAll('.navbar__navs a'),
-      menuAlength = menuA.length;
+    menuAparent = document.querySelectorAll('.nav-desktop .nav__item'),
+    menuA = document.querySelectorAll('.nav-desktop .nav__item-a'),
+    menuAlength = menuA.length;
     for (var i = 0; i < menuAlength; i++) {
       for (var q = 0; q < currentUrl.length; q++) {
         if (currentUrl[q] === menuA[i].getAttribute('href')) {
-          menuA[i].classList.add('active');
+          menuAparent[i].classList.add('active');
           break;
         }
       }
     }
-
   };
-  activeNavMenu();
+  activeHeaderMenu();
 
-  var activeMenu = () =>
+  // В футере
+  var activeFooterMenu = () =>
   {
     var currentUrl = window.location.pathname.split('/'),
-      menuA = document.querySelectorAll('.footer__nav-items a'),
-      menuAlength = menuA.length;
+    menuA = document.querySelectorAll('.footer__nav .nav__item-a'),
+    menuAparent = document.querySelectorAll('.footer__nav .nav__item'),
+    menuAlength = menuA.length;
     for (var i = 0; i < menuAlength; i++) {
       for (var q = 0; q < currentUrl.length; q++) {
         if (currentUrl[q] === menuA[i].getAttribute('href')) {
-          menuA[i].classList.add('active');
+          menuAparent[i].classList.add('active');
           break;
         }
       }
     }
-
   };
-  activeMenu();
+  activeFooterMenu();
+
+  // Мобильное
+  var activeMobileMenu = () =>
+  {
+    var currentUrl = window.location.pathname.split('/'),
+    menuA = document.querySelectorAll('.nav-mobile__item-a'),
+    menuAparent = document.querySelectorAll('.nav-mobile__item'),
+    menuAlength = menuA.length;
+    for (var i = 0; i < menuAlength; i++) {
+      for (var q = 0; q < currentUrl.length; q++) {
+        if (currentUrl[q] === menuA[i].getAttribute('href')) {
+          menuAparent[i].classList.add('active');
+          break;
+        }
+      }
+    }
+  };
+  activeMobileMenu();
 })();
 // /активный пункт меню
